@@ -1,0 +1,33 @@
+---
+interface Props {
+  name: string;
+  summary: string;
+  img: string;
+  ref: string;
+}
+
+const { name, summary, ref, img } = Astro.props;
+
+---
+
+<div
+  class="rounded-lg bg-base-200 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
+  <a href={ref} target="_blank">
+          <div class="hero-content flex-col md:flex-row">
+        <img
+          src={img}
+          class="max-w-sm md:max-w-[13rem] rounded-lg shadow-2xl"
+          loading="lazy"
+          decoding="async"
+          title={name}
+        />
+        <div>
+          <h1 class="text-3xl font-bold">{name}</h1>
+          <p class="py-4">{summary}</p>
+          <a target="_blank" href={ref} class="btn btn-primary">See now</a>
+        </div>
+      </div>
+  </a>
+</div>
+<div class="divider"></div>
