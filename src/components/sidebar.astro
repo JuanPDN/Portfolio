@@ -1,26 +1,28 @@
 ---
-import { Image } from "astro:assets";
-import profile from "../assets/Juan Pablo Delgado 2.jpeg"
+import Social from "./social.astro";
+import Avatar from "./avatar.astro"
 ---
-<div class="drawer-side">
-    <label
-      for="my-drawer-3"
-      aria-label="close sidebar"
-      class="drawer-overlay"></label>
-      <ul class="menu p-4 w-80 min-h-full bg-base-200">
-        <div class="avatar my-3 py-8 transition ease-in-out hover:scale-[102%] block">
-          <div class="mx-auto w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <a href="/">
-                <Image src={profile} alt="profile" class="">
-            </a>
-          </div>
-        </div>
-      <li><a href="/" class="py-3 text-base">Home</a></li>
-      <li><a class="py-3 text-base">Projects</a></li>
-      <li><a class="py-3 text-base">Services</a></li>
-      <li><a class="py-3 text-base">Store</a></li>
-      <li><a class="py-3 text-base">Blog</a></li>
-      <li><a class="py-3 text-base">CV</a></li>
-      <li><a class="py-3 text-base">Contact</a></li>
+
+<div class="drawer-side z-40">
+  <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"
+  ></label>
+  <aside class="p-4 w-80 min-h-full bg-base-200">
+    <Avatar/>
+    <ul class="menu menu-md grow shrink overflow-y-auto">
+      <div>
+        <li><a href="/" class="py-3 text-base">Home</a></li>
+        <li><a href="/projects" class="py-3 text-base">Projects</a></li>
+        <li><a href="" class="py-3 text-base">Services</a></li>
+        <li><a href="" class="py-3 text-base">Store</a></li>
+        <li><a href="/blog" class="py-3 text-base">Blog</a></li>
+        <li><a href="/cv" class="py-3 text-base">CV</a></li>
+        <li>
+          <a href="mailto:jpdelgado96@hotmail.com" class="py-3 text-base"
+          >Contact</a
+          >
+        </li>
+      </div>
     </ul>
+    <Social/>
+  </aside>
   </div>

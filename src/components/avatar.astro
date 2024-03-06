@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import profile from "../assets/Juan Pablo Delgado 2.jpeg";
+---
+
+<div class="avatar my-3 py-8 block">
+  <div
+    class="mx-auto w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+  >
+    <a href="/">
+      <Image
+        class="transition ease-in-out hover:scale-[105%]"
+        src={profile}
+        alt="profile"
+        loading="eager"
+      />
+    </a>
+  </div>
+</div>
