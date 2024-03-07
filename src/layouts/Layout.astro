@@ -3,6 +3,8 @@ import Navbar from "../components/navbar.astro";
 import SideBar from "../components/sidebar.astro";
 import Footer from "../components/footer.astro"
 
+import SpeedInsights from '@vercel/speed-insights/astro';
+
 interface Props {
   title: string;
 }
@@ -33,3 +35,4 @@ const { title } = Astro.props;
   </body>
 </html>
 
+<SpeedInsights />
