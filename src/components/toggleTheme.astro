@@ -25,5 +25,17 @@
     ></path></svg
   >
 </label>
-
 <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+<script is:inline>
+  if (localStorage.getItem("theme") === null) {
+    document.documentElement.setAttribute("data-theme", "light");
+  } else
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    );
+</script>
+<script>
+  import { themeChange } from 'theme-change';
+  themeChange();
+</script>
