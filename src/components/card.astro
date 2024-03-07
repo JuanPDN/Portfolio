@@ -1,11 +1,5 @@
 ---
-interface Props {
-  name: string;
-  summary: string;
-  img: string;
-  ref: string;
-}
-
+import { Image } from "astro:assets";
 const { name, summary, ref, img } = Astro.props;
 ---
 
@@ -14,7 +8,9 @@ const { name, summary, ref, img } = Astro.props;
 >
   <a href={ref} target="_blank">
     <div class="hero-content flex-col md:flex-row">
-      <img
+      <Image
+        width={750}
+        height={422}
         alt={name}
         src={img}
         class="max-w-sm md:max-w-[13rem] rounded-lg shadow-2xl"
