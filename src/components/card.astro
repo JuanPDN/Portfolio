@@ -6,7 +6,7 @@ const { name, summary, ref, img } = Astro.props;
 <div
   class="rounded-lg bg-base-200 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
 >
-  <a href={ref} target="_blank">
+  <a href={ref} target="_blank" aria-label={name}>
     <div class="hero-content flex-col md:flex-row">
       <Image
         width={750}
