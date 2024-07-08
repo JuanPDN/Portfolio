@@ -1,0 +1,26 @@
+name: Daily Commit
+
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-lastest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Make daily changes
+        run: echo "$(date)" >> daily_commit.txt
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "jpdelgado9641@gmail.com"
+          git config --global user.name "juanPDN"
+          git add .
+          git commit -m "Daily commit $(date)"
+          git push
