@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/card.astro";
+import projects from "../data/projects.ts";
+
+const lastProjects = projects[0].list;
 ---
 
 <Layout title="Portfolio">
@@ -18,24 +21,17 @@ import Card from "../components/card.astro";
           exceptional user experiences.
         </p>
         <h2 class="text-3xl w-full mb-12 font-bold">My last project {"</>"}</h2>
-        <Card
-          name="yes-no-app"
-          summary="The AutoResponse Chat App streamlines communication by automatically generating predefined messages for yes and no responses. Users can customize messages and set up triggers easily. Available on web, mobile, and desktop platforms, it ensures prompt and efficient replies across various channels."
-          img="/images/yes-no-app.png"
-          ref="https://github.com/JuanPDN/yes_no_app"
-        />
-        <Card
-          name="cinemapedia"
-          summary="The Upcoming Movies App keeps users informed about the latest releases and upcoming films in theaters. With a user-friendly interface, it provides details such as release dates, trailers, cast information, and reviews. Users can explore upcoming movies, bookmark favorites, and receive notifications for premiere dates."
-          img="/images/cinemapedia.png"
-          ref="https://github.com/JuanPDN/cinemapedia"
-        />
-        <Card
-          name="app_shop"
-          summary="The Product Management App is a user-friendly tool tailored for businesses to efficiently oversee their product inventory. With a focus on simplicity and effectiveness, this app simplifies the process of adding, editing, and organizing products. It enables users to maintain accurate product information, streamline inventory management, and make informed decisions to optimize product offerings."
-          img="/images/shop app.png"
-          ref="https://github.com/JuanPDN/app_shop"
-        />
+
+        {
+          lastProjects.map((project) => (
+            <Card
+              name={project.name}
+              summary={project.summary}
+              img={`/images/${project.image}`}
+              ref={project.ref}
+            />
+          ))
+        }
       </div>
     </div>
   </main>
