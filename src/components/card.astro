@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-const { name, summary, ref, img } = Astro.props;
+const { name, summary, ref, img, repo } = Astro.props;
 ---
 
 <div
@@ -21,7 +21,30 @@ const { name, summary, ref, img } = Astro.props;
       <div>
         <h1 class="text-3xl font-bold">{name}</h1>
         <p class="py-4">{summary}</p>
-        <a target="_blank" href={ref} class="btn btn-primary">See now</a>
+        <div class="flex gap-2">
+          {
+            ref && (
+              <a target="_blank" href={ref} class="btn btn-primary">
+                See now
+              </a>
+            )
+          }
+          {
+            repo && (
+              <a class="btn btn-neutral" href={repo} target="_blank">
+                <Image
+                  class="neutral-content"
+                  loading="lazy"
+                  width={20}
+                  height={20}
+                  src="/images/github.svg"
+                  alt="github"
+                />
+                Repository
+              </a>
+            )
+          }
+        </div>
       </div>
     </div>
   </a>
