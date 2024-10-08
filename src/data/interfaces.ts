@@ -7,5 +7,6 @@ export interface Project {
     name: string,
     summary: string,
     image: string,
-    ref: string
+    ref?: string,
+    repo?: string
 }
