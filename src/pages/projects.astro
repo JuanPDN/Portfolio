@@ -20,9 +20,11 @@ const webGames = projects[4].list;
               name={project.name}
               summary={project.summary}
               img={`/images/${project.image}`}
-              ref={project.ref}
+              ref={project?.ref}
+              repo={project?.repo}
             />
-          ))}
+          ))
+        }
         <h2 class="text-3xl w-full mb-12 font-bold">Web projects {"</>"}</h2>
         {
           webProjects.map((project) => (
@@ -30,7 +32,8 @@ const webGames = projects[4].list;
               name={project.name}
               summary={project.summary}
               img={`/images/${project.image}`}
-              ref={project.ref}
+              ref={project?.ref}
+              repo={project?.repo}
             />
           ))
         }
@@ -41,21 +44,23 @@ const webGames = projects[4].list;
               name={project.name}
               summary={project.summary}
               img={`/images/${project.image}`}
-              ref={project.ref}
+              ref={project?.ref}
+              repo={project?.repo}
             />
           ))
         }
         <h2 class="text-3xl w-full mb-12 font-bold">Mobile projects{"</>"}</h2>
-           {
-             mobileProjects.map((project) => (
-               <Card
-                 name={project.name}
-                 summary={project.summary}
-                 img={`/images/${project.image}`}
-                 ref={project.ref}
-               />
-             ))
-           }
+        {
+          mobileProjects.map((project) => (
+            <Card
+              name={project.name}
+              summary={project.summary}
+              img={`/images/${project.image}`}
+              ref={project?.ref}
+              repo={project?.repo}
+            />
+          ))
+        }
       </div>
     </div>
   </main>

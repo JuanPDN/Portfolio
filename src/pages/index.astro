@@ -28,7 +28,8 @@ const lastProjects = projects[0].list;
               name={project.name}
               summary={project.summary}
               img={`/images/${project.image}`}
-              ref={project.ref}
+              ref={project?.ref}
+              repo={project?.repo}
             />
           ))
         }
