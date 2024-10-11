@@ -1,16 +1,12 @@
 ---
 import { useTranslatedPath, getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
-const path = Astro.url.pathname.split("/").findLast((x) => x !== "en" || "es");
+const translatedPath = useTranslatedPath(lang);
+const path = Astro.url.pathname.replace(/^\/es/, "");
 ---
 
-<div class="dropdown dropdown-end language-selector">
-  <div
-    tabindex="0"
-    role="button"
-    class="btn btn-ghost m-1"
-    aria-label="Change language"
-  >
+<details class="dropdown dropdown-end language-selector">
+  <summary role="button" class="btn btn-ghost m-1" aria-label="Change language">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
@@ -24,12 +20,11 @@ const path = Astro.url.pathname.split("/").findLast((x) => x !== "en" || "es");
       >
       </path>
     </svg>
-  </div>
+  </summary>
   <ul
-    tabindex="0"
     class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
   >
-    <li><a href={`/${path}`}>English</a></li>
-    <li><a href={`es/${path}`}>Español</a></li>
+    <li><a href={translatedPath(path, "en")}>English</a></li>
+    <li><a href={translatedPath(path, "es")}>Español</a></li>
   </ul>
-</div>
+</details>
