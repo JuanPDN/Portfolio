@@ -20,7 +20,7 @@ const { name, summary, ref, img, repo, stack } = Astro.props;
       />
       <div>
         <h1 class="text-3xl font-bold">{name}</h1>
-        <div class="flex gap-2 mt-2">
+        <div class="flex flex-wrap gap-1 mt-2">
           {
             stack.map((element) => (
               <span class="badge badge-prymary" translate="no">{element}</span>
@@ -28,7 +28,7 @@ const { name, summary, ref, img, repo, stack } = Astro.props;
           }
         </div>
         <p class="py-4">{summary}</p>
-        <div class="flex gap-2">
+        <div class="flex flex-col sm:flex-row gap-2">
           {
             ref && (
               <a target="_blank" href={ref} class="btn btn-primary">
