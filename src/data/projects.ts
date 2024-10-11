@@ -1,6 +1,6 @@
 import type { Projects } from "./interfaces";
 
-const projects: Projects[] = [
+export const projects: Projects[] = [
     {
         category: "last Projects",
         list: [
@@ -202,5 +202,3 @@ const projects: Projects[] = [
         ]
     }
 ]
-
-export default projects

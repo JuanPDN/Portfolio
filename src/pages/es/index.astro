@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/card.astro";
+import { projectsEs } from "../../data/projects_es.ts";
+
+const lastProjects = projectsEs[0].list;
+---
+
+<Layout title="Portfolio">
+  <main>
+    <div class="flex flex-col mx-8 my-8 items-center">
+      <div class="lg:max-w-[900px] p-6 pt-10 max-w-[100vw]">
+        <h3 class="text-xl py-1">¡Hola! 👋🏻</h3>
+        <h1 class="text-5xl font-bold">Soy Juan Pablo Delgado</h1>
+        <h2 class="text-3xl py-3 font-bold">
+          Desarrollador Full Stack y Móvil
+        </h2>
+        <p class="text-xl my-8">
+          Desarrollador Full Stack con pasión por crear aplicaciones web
+          responsivas e interactivas. Competente en tecnologías de front-end y
+          back-end, con experiencia en JavaScript, React, Node.js y MongoDB.
+          Hábil en la creación de soluciones escalables que ofrecen experiencias
+          excepcionales para los usuarios.
+        </p>
+        <h2 class="text-3xl w-full mb-12 font-bold">
+          Mis últimos proyectos {"</>"}
+        </h2>
+
+        {
+          lastProjects.map((project) => (
+            <Card
+              name={project.name}
+              summary={project.summary}
+              img={`/images/${project.image}`}
+              stack={project.stack}
+              ref={project?.ref}
+              repo={project?.repo}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script></script>

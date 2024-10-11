@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/card.astro";
-import projects from "../data/projects.ts";
+import { projects } from "../data/projects.ts";
 
 const lastProjects = projects[0].list;
 ---
@@ -20,7 +20,9 @@ const lastProjects = projects[0].list;
           MongoDB. Skilled in creating scalable solutions that deliver
           exceptional user experiences.
         </p>
-        <h2 class="text-3xl w-full mb-12 font-bold">My lastest projects {"</>"}</h2>
+        <h2 class="text-3xl w-full mb-12 font-bold">
+          My lastest projects {"</>"}
+        </h2>
 
         {
           lastProjects.map((project) => (
@@ -38,3 +40,5 @@ const lastProjects = projects[0].list;
     </div>
   </main>
 </Layout>
+
+<script></script>
