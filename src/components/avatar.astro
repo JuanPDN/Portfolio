@@ -1,13 +1,16 @@
 ---
 import { Image } from "astro:assets";
 const {src} = Astro.props
+
+const lang = getLangFromUrl(Astro.url);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <div class="avatar my-3 py-8 block">
   <div
     class="mx-auto w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
   >
-    <a href="/">
+    <a href={translatedPath("/")}>
       <Image
         class="transition ease-in-out hover:scale-[105%]"
         src={src}
