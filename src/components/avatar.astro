@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
-const {src} = Astro.props
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
 
+const {src} = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const translatedPath = useTranslatedPath(lang);
 ---
